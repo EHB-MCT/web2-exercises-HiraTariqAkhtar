@@ -1,0 +1,29 @@
+*{
+    font-family: sans-serif;
+}
+
+body{
+    background-color: rgb(214, 175, 211);
+    margin-left: 1.5em;
+}
+
+h2{
+    margin-bottom: 0.25em;
+}
+
+input{
+    padding: 0.75em 1.5em;
+    border-radius: 5px;
+}
+
+input[type="submit"]{
+    margin-top: 2em;
+    background-color: rgb(243, 54, 133);
+    padding: 1em 3em;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#messages{
+    margin-top: 2.5em;
+}
