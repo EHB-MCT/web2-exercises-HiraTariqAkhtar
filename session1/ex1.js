@@ -10,7 +10,7 @@ window.onload = function(){
         let order = document.getElementById("order").value;
         // console.log("NAME= " + name, "EMAIL= " +email, "ORDER= "+ order);
         
-        document.getElementById("messages").innerHTML = `<p> The order for the customer ${name} is the following: ${order}. The customer may be notified by email: ${email}`;
-
+        document.getElementById("messages").innerHTML = `<p> The order for the customer <span> ${name} </span> is the following: <span>${order}</span>. The customer may be notified by email: <span>${email}</span>`;
+        //span toegevoegd om variabelen te kunnen stylen
     });
 };

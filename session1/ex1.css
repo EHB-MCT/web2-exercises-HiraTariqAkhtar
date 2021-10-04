@@ -27,3 +27,8 @@ input[type="submit"]{
 #messages{
     margin-top: 2.5em;
 }
+
+#messages span{
+    font-weight: bold;
+    color: firebrick;
+}
