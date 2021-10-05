@@ -1,5 +1,7 @@
 "use strict";
 
+import Team from './team.js';
+
 let list = [];
 let pokemon = [];
 
@@ -26,7 +28,6 @@ window.onload = function(){
     function buildList(){
         pokemon.sort((a,b) => a.id - b.id);
         pokemon.forEach(p => {
-            console.log(p);
             let html = `<div class = "card" id = "${p.id}">
                          <img src = "${p.sprites.front_default}">
                          <p> nr.${p.id} </p>
@@ -36,4 +37,7 @@ window.onload = function(){
             document.getElementById("list").insertAdjacentHTML("beforeend", html)
         })
     }
+
+    let team1 = new Team();
+    console.log(team1.describe);
 }
