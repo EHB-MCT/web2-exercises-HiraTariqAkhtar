@@ -15,7 +15,6 @@ function fetchPokemons(){
            .then(response => response.json())
            .then(data => {
                pokemon.push(data);
-            //    console.log(pokemon);
            })
        }
     })
@@ -30,7 +29,7 @@ window.onload = function(){
             console.log(p);
             let html = `<div class = "card" id = "${p.id}">
                          <img src = "${p.sprites.front_default}">
-                         <p> nr.${p.id}
+                         <p> nr.${p.id} </p>
                          <p> ${p.forms[0].name} </p>
                          <button> Add to team </button>
                          </div>`

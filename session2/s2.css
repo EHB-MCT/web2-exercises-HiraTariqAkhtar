@@ -1,7 +1,6 @@
 #list {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
 }
 
@@ -12,6 +11,7 @@
 
 img {
     background-color: rgb(247, 242, 242);
+    padding: 0.25em;
 }
 
 p{
@@ -20,4 +20,8 @@ p{
 
 button{
     margin: 0 0.5em 1em;
+    background-color: rgb(109, 106, 106);
+    color: white;
+    border-radius: 5px;
+    padding: 0.5em;
 }
