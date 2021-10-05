@@ -7,13 +7,17 @@
 
 .card{
     border: 3px solid rgb(212, 209, 209);
-    margin: 0.5em;
+    margin: 0.25em;
 }
 
-.card img {
+img {
     background-color: rgb(247, 242, 242);
 }
 
 p{
     text-align: center;
+}
+
+button{
+    margin: 0 0.5em 1em;
 }

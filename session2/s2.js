@@ -15,7 +15,7 @@ function fetchPokemons(){
            .then(response => response.json())
            .then(data => {
                pokemon.push(data);
-               console.log(pokemon);
+            //    console.log(pokemon);
            })
        }
     })
@@ -32,6 +32,7 @@ window.onload = function(){
                          <img src = "${p.sprites.front_default}">
                          <p> nr.${p.id}
                          <p> ${p.forms[0].name} </p>
+                         <button> Add to team </button>
                          </div>`
             document.getElementById("list").insertAdjacentHTML("beforeend", html)
         })
