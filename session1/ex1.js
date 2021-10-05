@@ -16,19 +16,46 @@ window.onload = function(){
 
     // });
 
-    //ex5
+//     //ex5
+//         document.getElementById("form").addEventListener("submit", event=>{
+//         event.preventDefault();
+//         let order = {
+//             name: document.getElementById("name").value,
+//             email: document.getElementById("email").value,
+//             order: document.getElementById("order").value
+//         }
+//         // console.log(order);
+//         printOrders(order)
+//     });
+
+    //ex6
         document.getElementById("form").addEventListener("submit", event=>{
-        event.preventDefault();
-        let order = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            order: document.getElementById("order").value
-        }
-        console.log(order)
-        printOrders(order)
-    });
+            event.preventDefault();
+            let dishes = [];
+            dishes.push({
+                id: '1',
+                name: "Burger and french fries",
+                price: "18"
+            },
+            {
+                id: '2',
+                name: "Pizza",
+                price: "20" 
+            },
+            {
+                id: '3',
+                name: "Sushi",
+                price: "25" 
+            }
+            );
+            console.log(dishes);
+            document.getElementById("dishChoice").innerHTML = `<input name="dish" type= "radio" id= "${dishes.id}" value= "${dishes.name}"
+            <label for "${dishes.id}">${dishes.name}</label> `;
+        });
 }
 
-function printOrders(orderdetails){
-    document.getElementById("messages").innerHTML = `<p> The order for the customer <span> ${orderdetails.name} </span> is the following: <span>${orderdetails.order}</span>. The customer may be notified by email: <span>${orderdetails.email}</span>`;
-}
+
+// function of ex 5
+// function printOrders(orderdetails){
+//     document.getElementById("messages").innerHTML = `<p> The order for the customer <span> ${orderdetails.name} </span> is the following: <span>${orderdetails.order}</span>. The customer may be notified by email: <span>${orderdetails.email}</span>`;
+// }
