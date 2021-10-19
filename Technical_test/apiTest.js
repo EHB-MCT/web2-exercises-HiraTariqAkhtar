@@ -7,11 +7,15 @@ async function fetchSerial (){
     .then (data => {
         console.log(data)
         let content = document.getElementById("data")
-        let details = data.results[0]
-        content.innerHTML = `
-        <h2> ${details.name}</h2>
-        <h3> Overview </h3>
-        <p> ${details.overview}</p>`
+        let details = data.results
+        details.forEach(serial =>{
+
+            let html = `
+            <h2> ${serial.name}</h2>
+            <h3> Overview </h3>
+            <p> ${serial.overview}</p>`
+            content.insertAdjacentHTML("beforeend", html)
+        })
 
 })
 }
