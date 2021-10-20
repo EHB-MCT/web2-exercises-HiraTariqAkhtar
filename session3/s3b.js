@@ -1,7 +1,7 @@
 "use strict";
 
 let movieName = document.getElementById("movieName");
-let data = document.getElementById("content");
+let content = document.getElementById("content");
 
 const movieSearch = document.getElementById("search");
 movieSearch.addEventListener("click", submitHandler);
@@ -26,11 +26,15 @@ function submitHandler(e) {
             console.log(data)
             if (data.Search){
                 let userInput = data.Search
-                content.innerHTML = `
-                <h2>${userInput[0].Title}</h2>
-                <h3>${userInput[0].Year}</h3>
-                <img src = "${userInput[0].Poster}</img>`;
-                movieName.value = "";
+                content.innerHTML = ""
+                userInput.forEach(input =>{
+                    let html = `
+                    <h2> ${input.Title}</h2>
+                    <h3>${input.Type} from${input.Year}</h3>
+                    <img src = "${input.Poster}"</img>`
+                    content.insertAdjacentHTML("beforeend", html);
+                    movieName.value = "";
+                })
             } else{
                 content.innerHTML = data.Error;
                 movieName.value = "";
