@@ -2,25 +2,37 @@
 
 
 async function fetchSerial (){
-    let response = await fetch("http://api.themoviedb.org/3/discover/tv?api_key=daf4ffe88f06bba73b59069934fc3b37&with_origin_country=PK")
+    let response = await fetch("http://api.themoviedb.org/3/discover/tv?api_key=daf4ffe88f06bba73b59069934fc3b37&with_original_language=ur&sort_by=original_title.asc&include_adult=false")
     return await response.json()
     .then (data => {
-        console.log(data)
-        let content = document.getElementById("data")
+        console.log(data);
         let details = data.results
-        details.forEach(serial =>{
-
+        let filtered = details.filter(pic => pic.poster_path != null && pic.first_air_date != "")
+        filtered.forEach(serial =>{
             let html = `
             <h2> ${serial.name}</h2>
-            <h3> Overview </h3>
-            <p> ${serial.overview}</p>`
+            <p> First episode : ${serial.first_air_date} </p>
+            <img src="https://image.tmdb.org/t/p/w200${serial.poster_path}">
+            `
+            let content = document.getElementById("serialData")
             content.insertAdjacentHTML("beforeend", html)
         })
-
 })
 }
+
+// async function fetchActor (){
+//     // Sajal Ali 
+//     let response = await fetch("https://api.themoviedb.org/3/person/1254942?api_key=daf4ffe88f06bba73b59069934fc3b37")
+//     return await response.json()
+//     .then (data => {
+//         console.log(data)
+        
+//         })
+// }
+
 
 /* => ook veel series op omdb */
 
 
 fetchSerial()
+// fetchActor()
