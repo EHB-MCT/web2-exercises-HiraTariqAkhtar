@@ -1,0 +1,26 @@
+body{
+    font-family: Helvetica;
+
+}
+
+#serialData{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title{
+    color: #2458a3;
+}
+
+img{
+    margin: 0 1em 0.5em
+}
+
+.drama {
+    margin: 1em;
+    border: 2px solid #2458a3;
+}
+
+p, h2 {
+    text-align: center;
+}
